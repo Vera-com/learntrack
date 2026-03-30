@@ -3,7 +3,13 @@
 <ul>
     {% for session in sessions %}
         <li>
-            <strong>{{ session.title }}</strong> - {{ session.course }} ({{ session.duration }} mins)
+            <strong>{{ session.title }}</strong><br>
+            Course: {{ session.course }}<br>
+            Duration: {{ session.duration }} mins<br>
+            Date: {{ session.date }}<br>
+            Description: {{ session.description }}
         </li>
+        <br>
     {% endfor %}
 </ul>
+
