@@ -1,0 +1,9 @@
+<h1>My Study Sessions</h1>
+
+<ul>
+    {% for session in sessions %}
+        <li>
+            <strong>{{ session.title }}</strong> - {{ session.course }} ({{ session.duration }} mins)
+        </li>
+    {% endfor %}
+</ul>

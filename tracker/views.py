@@ -1,3 +1,8 @@
 from django.shortcuts import render
 
-# Create your views here.
+from .models import StudySession
+
+
+def study_list(request):
+    sessions = StudySession.objects.all()
+    return render(request, 'tracker/study_list.html', {'sessions': sessions})
