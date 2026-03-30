@@ -3,6 +3,9 @@
 {% block content %}
     <h1 class="mb-4">My Study Sessions</h1>
 
+<a href="{% url 'add_session' %}" class="btn btn-success mb-3">
+    + Add New Session
+</a>
     {% for session in sessions %}
         <div class="card mb-4">
             <div class="card-body">
