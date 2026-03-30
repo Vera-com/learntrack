@@ -1,15 +1,19 @@
-<h1>My Study Sessions</h1>
+{% extends 'tracker/base.html' %}
 
-<ul>
+{% block content %}
+    <h1 class="mb-4">My Study Sessions</h1>
+
     {% for session in sessions %}
-        <li>
-            <strong>{{ session.title }}</strong><br>
-            Course: {{ session.course }}<br>
-            Duration: {{ session.duration }} mins<br>
-            Date: {{ session.date }}<br>
-            Description: {{ session.description }}
-        </li>
-        <br>
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">{{ session.title }}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{ session.course }}</h6>
+                <p class="card-text"><strong>Duration:</strong> {{ session.duration }} mins</p>
+                <p class="card-text"><strong>Date:</strong> {{ session.date }}</p>
+                <p class="card-text"><strong>Description:</strong> {{ session.description }}</p>
+            </div>
+        </div>
     {% endfor %}
-</ul>
+{% endblock %}
+
 
