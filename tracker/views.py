@@ -30,5 +30,14 @@ def edit_session(request, session_id):
             return redirect('study_list')
     else:
         form = StudySessionForm(instance=session)
-
     return render(request, 'tracker/edit_session.html', {'form': form})
+
+
+def delete_session(request, session_id):
+    session = get_object_or_404(StudySession, id=session_id)
+
+    if request.method == 'POST':
+        session.delete()
+        return redirect('study_list')
+
+    return render(request, 'tracker/delete_session.html', {'session': session})

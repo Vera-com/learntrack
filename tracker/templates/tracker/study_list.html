@@ -14,7 +14,10 @@
                 <p class="card-text"><strong>Duration:</strong> {{ session.duration }} mins</p>
                 <p class="card-text"><strong>Date:</strong> {{ session.date }}</p>
                 <p class="card-text"><strong>Description:</strong> {{ session.description }}</p>
+                <div class="mt-2">
                 <a href="{% url 'edit_session' session.id %}" class="btn btn-primary btn-sm mt-2">Edit</a>
+                <a href="{% url 'delete_session' session.id %}" class="btn btn-danger btn-sm mt-2">Delete</a>
+            </div>
             </div>
         </div>
     {% endfor %}
