@@ -92,6 +92,64 @@ The main model used is:
 
 I kept the design simple and clean to make it easy to use. Study sessions are displayed as cards so each entry is clearly separated and easy to read.
 
+—
+
+## Challenges and Solutions
+
+During the development of this project, I encountered a few challenges which helped me understand Django and web development better.
+
+### 1. Form Submission and Data Saving
+At first, I had issues getting the form to save data correctly to the database. The page would reload, but no new data appeared.
+
+**Solution:**  
+I ensured that the form was properly connected to the view using `request.POST`, and added form validation using `form.is_valid()` before saving.
+
+---
+
+### 2. Redirect After Form Submission
+After submitting the form, the page was not redirecting back to the main list view.
+
+**Solution:**  
+I used Django’s `redirect()` function to send users back to the study list page after successfully saving a session.
+
+---
+
+### 3. Template Structure Confusion
+Understanding how `base.html` and other templates connect using `{% extends %}` was initially confusing.
+
+**Solution:**  
+I structured all templates inside `templates/tracker/` and used template inheritance correctly so that all pages share a consistent layout.
+
+---
+
+### 4. Static Files Not Loading Properly
+At one point, my CSS was not applying to the page.
+
+**Solution:**  
+I fixed this by correctly setting up the static folder (`static/tracker/`) and using `{% load static %}` along with the proper static path in the template.
+
+---
+
+### 5. Date Input Format Issue
+The date field required manual input in a specific format, which was not user-friendly.
+
+**Solution:**  
+I improved the user experience by adding a date picker widget in `forms.py` using:
+```python
+widgets = {
+    'date': forms.DateInput(attrs={'type': 'date'})
+}
+```
+This allowed users to select dates easily from a calendar instead of typing manually.
+
+---
+
+### 6. Understanding Django Project Structure
+At the beginning, it was difficult to understand how models, views, templates, and URLs all connect together.
+
+**Solution:**
+By building the project step by step, I was able to understand how each part interacts, especially how data flows from the database to the frontend.
+
 ---
 
 ## Project Status
@@ -117,3 +175,11 @@ Testing will be documented as development progresses.
 - Django documentation
 - Bootstrap documentation
 - Code Institute course materials
+
+
+
+
+
+
+
+
