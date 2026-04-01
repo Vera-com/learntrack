@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 
 from .models import StudySession
 from .forms import StudySessionForm
@@ -18,3 +18,17 @@ def add_session(request):
     else:
         form = StudySessionForm()
     return render(request, 'tracker/add_session.html', {'form': form})
+
+
+def edit_session(request, session_id):
+    session = get_object_or_404(StudySession, id=session_id)
+
+    if request.method == 'POST':
+        form = StudySessionForm(request.POST, instance=session)
+        if form.is_valid():
+            form.save()
+            return redirect('study_list')
+    else:
+        form = StudySessionForm(instance=session)
+
+    return render(request, 'tracker/edit_session.html', {'form': form})

@@ -14,6 +14,7 @@
                 <p class="card-text"><strong>Duration:</strong> {{ session.duration }} mins</p>
                 <p class="card-text"><strong>Date:</strong> {{ session.date }}</p>
                 <p class="card-text"><strong>Description:</strong> {{ session.description }}</p>
+                <a href="{% url 'edit_session' session.id %}" class="btn btn-primary btn-sm mt-2">Edit</a>
             </div>
         </div>
     {% endfor %}
