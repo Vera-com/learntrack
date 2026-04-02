@@ -21,6 +21,18 @@ The main goal of this project is to create a simple and user-friendly study trac
 
 ---
 
+## User Experience
+
+The application was designed to be simple and easy to use. Users can quickly add and manage their study sessions without confusion.
+
+Study sessions are displayed in a card layout to improve readability and organisation.
+
+A confirmation message is shown before deleting a session to prevent accidental data loss.
+
+The layout is responsive, allowing users to access the application comfortably on mobile devices, tablets, and desktops.
+
+---
+
 ## Target Users
 
 This app is designed for:
@@ -40,26 +52,19 @@ This app is designed for:
 
 ---
 
-## Features (Current)
+## Features
 
 At the current stage, the application includes:
 
-- A homepage that displays all study sessions
-- A form to add new study sessions
-- A dropdown for selecting course categories
-- A date picker to make date selection easier
-- A clean layout using Bootstrap
-- Custom styling for better presentation
-
----
-
-## Features (Coming Next)
-
-- Edit study sessions
-- Delete study sessions
-- Better styling and layout improvements
-- Validation improvements
-- Deployment
+- Users can create, view, edit, and delete study sessions
+- Study sessions are displayed in a responsive card layout using Bootstrap
+- Each session includes title, course, duration, date, and description
+- A dropdown is used for selecting course categories
+- A date picker is included to simplify date selection
+- A confirmation prompt appears before deleting a session to prevent accidental loss of data
+- The layout is responsive across mobile, tablet, and desktop devices
+- Custom styling has been applied for improved presentation
+- A custom favicon has been added for better branding
 
 ---
 
@@ -90,7 +95,7 @@ The main model used is:
 
 ## Design
 
-I kept the design simple and clean to make it easy to use. Study sessions are displayed as cards so each entry is clearly separated and easy to read.
+The design was kept simple and clean to ensure ease of use. Study sessions are displayed as cards so each entry is clearly separated and easy to read. Bootstrap was used to create a responsive and consistent layout across different screen sizes.
 
 —
 
@@ -152,9 +157,41 @@ By building the project step by step, I was able to understand how each part int
 
 ---
 
+### 7. Delete Functionality and User Experience
+
+Initially, the delete functionality redirected users to a separate page where they had to choose between "Yes, delete" or "Cancel". While this worked, it interrupted the user flow and felt slow.
+
+**Solution:**
+This was improved by replacing it with a JavaScript confirmation prompt that appears instantly when the delete button is clicked. This made the process faster and more user-friendly while still preventing accidental deletion.
+
+---
+
+### 8. Responsive Layout Issues
+
+The initial layout did not display well on smaller screens.
+
+**Solution:**
+Bootstrap grid classes were used to ensure the layout adapts properly across mobile, tablet, and desktop devices.
+
+---
+
+### 9. Favicon Clarity Issue
+
+The favicon initially appeared blurry due to incorrect sizing and resolution.
+
+**Solution:**
+This was improved by replacing it with a clearer, properly scaled icon to ensure better visibility in the browser tab.
+
+
+
 ## Project Status
 
-This project is still in progress. So far, I have completed the functionality to add and display study sessions. The next step is to implement edit and delete features to complete full CRUD functionality.
+This project is currently functional and includes full CRUD (Create, Read, Update, Delete) functionality.
+
+Users can add, view, edit, and delete study sessions. The application also includes responsive design and basic user experience improvements such as confirmation prompts for deletion.
+
+Further improvements may include enhanced validation, user authentication, and additional features.
+
 
 ---
 
