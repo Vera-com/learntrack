@@ -1,4 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib import messages
+
 
 from .models import StudySession
 from .forms import StudySessionForm
@@ -14,6 +16,7 @@ def add_session(request):
         form = StudySessionForm(request.POST)
         if form.is_valid():
             form.save()
+            messages.success(request, "Study session added successfully!")
             return redirect('study_list')
     else:
         form = StudySessionForm()
@@ -27,6 +30,7 @@ def edit_session(request, session_id):
         form = StudySessionForm(request.POST, instance=session)
         if form.is_valid():
             form.save()
+            messages.success(request, "Study session updated successfully!")
             return redirect('study_list')
     else:
         form = StudySessionForm(instance=session)
@@ -38,6 +42,7 @@ def delete_session(request, session_id):
 
     if request.method == 'POST':
         session.delete()
+        messages.success(request, "Study session deleted successfully.")
         return redirect('study_list')
 
     return render(request, 'tracker/delete_session.html', {'session': session})
