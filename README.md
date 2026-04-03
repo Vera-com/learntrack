@@ -52,6 +52,47 @@ This app is designed for:
 
 ---
 
+## MoSCoW Prioritisation
+
+To help organise the development process and focus on what is most important, the features of this project is prioritised using the MoSCoW method.
+
+---
+
+### Must Haves
+
+These are the core features required for the application to function properly:
+
+- Add new study sessions  
+- View all study sessions  
+- Edit existing study sessions  
+- Delete study sessions  
+- Store data in the database  
+- Responsive layout across mobile, tablet, and desktop  
+
+---
+
+### Should Haves
+
+These features help improve the user experience:
+
+- Confirmation prompt before deleting a session  
+- Success messages after adding, editing, or deleting  
+- Clean and structured layout using Bootstrap cards  
+- Date picker for easier date selection  
+
+---
+
+### Could Haves
+
+These are additional features that could be added in the future:
+
+- Dark mode or colour theme options  
+- Search or filter study sessions  
+- Dashboard showing total study time or progress  
+- User authentication system  
+- Export study sessions (PDF or CSV)
+
+
 ## Features
 
 At the current stage, the application includes:
