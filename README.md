@@ -1,5 +1,22 @@
 # LearnTrack
 
+## 📌 Table of Contents
+
+- [Overview](#overview)
+- [Project Goals](#project-goals)
+- [User Experience](#user-experience)
+- [User Stories](#user-stories)
+- [Features](#features)
+- [Data Model](#data-model)
+- [Technologies Used](#technologies-used)
+- [Design](#design)
+- [Challenges and Solutions](#challenges-and-solutions)
+- [Testing](#testing)
+- [Deployment](#deployment)
+- [Credits](#credits)
+
+---
+
 ## Overview
 
 LearnTrack is a simple web app I built using Django to help track study sessions in an organised way.
@@ -106,21 +123,41 @@ At the current stage, the application includes:
 - The layout is responsive across mobile, tablet, and desktop devices
 - Custom styling has been applied for improved presentation
 - A custom favicon has been added for better branding
+- Success messages are displayed after creating, updating, or deleting a session
+- Delete functionality includes both a JavaScript confirmation prompt and a Django confirmation page for added safety
 
 ---
 
 ## Data Model
 
-The main model used is:
+The application uses two main models:
 
-**StudySession**, which includes:
-- Course (dropdown choice)
+### Course
+This model stores the different course categories available in the app.
+
+- Name (CharField)
+
+---
+
+### StudySession
+This model stores individual study sessions.
+
+- Course (ForeignKey → Course)
 - Title
 - Description
 - Duration (in minutes)
 - Date
 
 ---
+
+### Relationship
+
+Each study session is linked to a course using a ForeignKey relationship.
+
+This allows:
+- Multiple study sessions per course
+- Easy categorisation and filtering
+
 
 ## Technologies Used
 
@@ -200,10 +237,17 @@ By building the project step by step, I was able to understand how each part int
 
 ### 7. Delete Functionality and User Experience
 
-Initially, the delete functionality redirected users to a separate page where they had to choose between "Yes, delete" or "Cancel". While this worked, it interrupted the user flow and felt slow.
+Initially, the delete functionality redirected users to a separate confirmation page, which worked but felt slightly slow.
 
 **Solution:**
-This was improved by replacing it with a JavaScript confirmation prompt that appears instantly when the delete button is clicked. This made the process faster and more user-friendly while still preventing accidental deletion.
+This was improved by adding a JavaScript confirmation prompt before the delete action is triggered.  
+
+In addition to this, a Django confirmation page was kept as a secondary safeguard, ensuring that users do not accidentally delete important data.
+
+A success message is also displayed after deletion, providing clear feedback to the user.
+
+This combination improves both speed and safety in the user experience.
+
 
 ---
 
@@ -233,20 +277,75 @@ Users can add, view, edit, and delete study sessions. The application also inclu
 
 Further improvements may include enhanced validation, user authentication, and additional features.
 
-
----
-
-## Deployment
-
-Deployment will be handled later in the project.
-
 ---
 
 ## Testing
 
-Testing will be documented as development progresses.
+The application was tested manually to ensure all core functionality works as expected.
+
+### CRUD Testing
+
+- **Create:**  
+  Users can successfully add new study sessions using the form.
+
+- **Read:**  
+  All study sessions are displayed correctly on the homepage in a card layout.
+
+- **Update:**  
+  Users can edit existing study sessions, and changes are reflected immediately.
+
+- **Delete:**  
+  Users can delete sessions using a confirmation prompt and confirmation page.  
+  A success message is displayed after deletion.
 
 ---
+
+### Form Validation
+
+- Required fields prevent empty submissions
+- Error messages are displayed when fields are missing
+
+---
+
+### Responsiveness
+
+- Tested on mobile, tablet, and desktop screen sizes
+- Layout adjusts correctly using Bootstrap grid
+
+---
+
+### Deployment Testing
+
+- Application runs successfully on the deployed Render URL
+- Database operations (CRUD) work correctly in production
+
+
+---
+
+
+## Deployment
+
+This project was deployed using Render.
+
+### Steps:
+
+1. The project was pushed to GitHub
+2. A new Web Service was created on Render
+3. The repository was connected to Render
+4. Environment variables were configured
+5. Build command used:
+
+pip install -r requirements.txt && python manage.py migrate && python manage.py collectstatic --noinput
+
+6. The application was deployed successfully and is accessible via a public URL
+
+---
+
+### Notes
+
+- The free Render instance may spin down after inactivity
+- Initial load may take a few seconds when waking up
+
 
 ## Credits
 
