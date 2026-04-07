@@ -1,184 +1,192 @@
 /* GLOBAL STYLING */
-
-/* Soft background + readable text for the whole app */
+/* Elegant soft background and cleaner overall feel */
 body {
-    background-color: #f4f7f8; /* light grey/blue background for a softer look */
-    font-family: Arial, sans-serif; /* clean, widely supported font */
-    color: #1f2933; /* dark text for good readability */
+    background: linear-gradient(135deg, #eef4f8, #f8fbfd);
+    font-family: Georgia, "Times New Roman", serif;
+    color: #1f2933;
+    min-height: 100vh;
 }
-
 
 /* NAVBAR / HEADER */
-
-/* Dark header to create contrast and structure */
 .navbar,
 header {
-    background-color: #0f172a; /* deep navy tone */
+    background: linear-gradient(90deg, #0f172a, #111827);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
-/* Ensure header text is visible on dark background */
 .navbar-brand,
 header a,
 header h1 {
-    color: #ffffff !important; /* force white text */
-    font-weight: 600; /* slightly bold for emphasis */
+    color: #ffffff !important;
+    font-weight: 700;
+    letter-spacing: 0.3px;
 }
 
-
 /* LAYOUT SPACING */
-
-/* Add breathing space around main content */
 .container {
     margin-top: 2rem;
     margin-bottom: 2rem;
 }
 
-/* Headings styling for clarity and hierarchy */
 h1, h2, h3 {
-    color: #102a43; /* slightly darker than body text */
-    font-weight: 700; /* strong emphasis */
+    color: #102a43;
+    font-weight: 700;
     margin-bottom: 1rem;
 }
 
-
-/* CARD DESIGN (MAIN CONTENT) */
-
-/* Styling each study session card */
+/* CARD DESIGN */
 .card {
-    border: 1px solid #d9e2ec; /* soft border */
-    border-radius: 14px; /* rounded edges for modern look */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* subtle shadow */
-    padding: 1rem;
-    background-color: #ffffff;
-    transition: transform 0.2s ease, box-shadow 0.2s ease; /* smooth hover effect */
-    height: 100%; /* ensures equal card height */
+    border: none;
+    border-radius: 20px;
+    padding: 1.2rem;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(241, 245, 249, 0.88));
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+    transition: all 0.25s ease;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(6px);
 }
 
-/* Lift card slightly on hover (improves interactivity) */
+/* Modern accent */
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 5px;
+    width: 100%;
+    background: linear-gradient(to right, #2563eb, #14b8a6, #22c55e);
+}
+
+/* Hover effect */
 .card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+    transform: translateY(-6px);
+    box-shadow: 0 16px 32px rgba(15, 23, 42, 0.12);
 }
 
-/* Card titles (session titles) */
+/* Alternating card tones */
+.row.g-4 > div:nth-child(3n+1) .card {
+    background: linear-gradient(135deg, rgba(239, 246, 255, 0.95), rgba(219, 234, 254, 0.85));
+}
+
+.row.g-4 > div:nth-child(3n+2) .card {
+    background: linear-gradient(135deg, rgba(236, 253, 245, 0.95), rgba(209, 250, 229, 0.85));
+}
+
+.row.g-4 > div:nth-child(3n+3) .card {
+    background: linear-gradient(135deg, rgba(254, 249, 195, 0.95), rgba(253, 230, 138, 0.82));
+}
+
+/* Card titles */
 .card-title {
-    color: #1d4ed8; /* blue highlight */
+    color: #1d4ed8;
     font-weight: 700;
     margin-bottom: 0.5rem;
+    letter-spacing: 0.3px;
 }
 
-/* Card text spacing for readability */
+/* Card text */
 .card p {
-    margin-bottom: 0.5rem;
-    line-height: 1.5;
+    margin-bottom: 0.55rem;
+    line-height: 1.6;
+    font-style: italic;
+    color: #334155;
 }
 
+/* CARD LAYOUT */
+.row.g-4 {
+    justify-content: flex-start;
+}
+
+.row.g-4 > div {
+    margin-bottom: 1rem;
+}
 
 /* BUTTON STYLING */
-
-/* Base button styling */
 .btn {
-    border-radius: 8px; /* smoother edges */
-    padding: 0.45rem 0.9rem;
+    border-radius: 10px;
+    padding: 0.5rem 1rem;
     font-weight: 600;
-    transition: all 0.2s ease-in-out; /* smooth hover transitions */
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
-/* Primary & success buttons (Add / Save actions) */
 .btn-success,
 .btn-primary {
-    background-color: #15803d; /* green tone */
-    border-color: #15803d;
+    background: linear-gradient(90deg, #15803d, #16a34a);
+    border: none;
+    color: #ffffff;
 }
 
-/* Hover effect for primary buttons */
 .btn-success:hover,
 .btn-primary:hover {
-    background-color: #166534;
-    border-color: #166534;
+    background: linear-gradient(90deg, #166534, #15803d);
+    transform: translateY(-1px);
 }
 
-/* Delete button */
 .btn-danger {
-    background-color: #dc2626; /* red for warning/destructive action */
-    border-color: #dc2626;
+    background: linear-gradient(90deg, #dc2626, #ef4444);
+    border: none;
 }
 
-/* Hover state for delete */
 .btn-danger:hover {
-    background-color: #b91c1c;
-    border-color: #b91c1c;
+    background: linear-gradient(90deg, #b91c1c, #dc2626);
+    transform: translateY(-1px);
 }
 
-/* Edit or secondary actions */
 .btn-warning,
 .btn-info {
-    background-color: #2563eb; /* blue tone */
-    border-color: #2563eb;
+    background: linear-gradient(90deg, #2563eb, #3b82f6);
+    border: none;
     color: #ffffff;
 }
 
-/* Hover for edit buttons */
 .btn-warning:hover,
 .btn-info:hover {
-    background-color: #1d4ed8;
-    border-color: #1d4ed8;
+    background: linear-gradient(90deg, #1d4ed8, #2563eb);
     color: #ffffff;
+    transform: translateY(-1px);
 }
-
 
 /* FORM STYLING */
-
-/* Form container styling */
 form {
-    background-color: #ffffff;
-    padding: 1.5rem;
-    border-radius: 14px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+    background: rgba(255, 255, 255, 0.88);
+    padding: 1.8rem;
+    border-radius: 18px;
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
     border: 1px solid #d9e2ec;
+    backdrop-filter: blur(6px);
 }
 
-/* Inputs, dropdowns, textarea */
 form input,
 form select,
 form textarea {
     width: 100%;
     margin-bottom: 1rem;
-    border: 1px solid #bcccdc;
-    border-radius: 8px;
-    padding: 0.65rem 0.75rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    padding: 0.7rem 0.85rem;
+    background-color: #ffffff;
 }
 
-/* Focus state for better UX (user knows where they are typing) */
 form input:focus,
 form select:focus,
 form textarea:focus {
     outline: none;
     border-color: #2563eb;
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
 }
 
-
-/* ALERT / MESSAGES */
-
-/* Success message styling */
+/* ALERTS */
 .alert-success {
-    background-color: #dcfce7; /* soft green */
+    background-color: #dcfce7;
     border: 1px solid #86efac;
     color: #166534;
-    border-radius: 10px;
+    border-radius: 12px;
 }
 
-/* Other alerts */
 .alert-danger,
 .alert-warning {
-    border-radius: 10px;
-}
-
-
-/* GRID SPACING FIX */
-
-/* Ensures proper spacing between cards */
-.row.g-4 > div {
-    margin-bottom: 1rem;
+    border-radius: 12px;
 }

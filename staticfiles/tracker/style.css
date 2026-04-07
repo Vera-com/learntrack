@@ -1,22 +1,192 @@
+/* GLOBAL STYLING */
+/* Elegant soft background and cleaner overall feel */
 body {
-    background-color: #f8f9fa;
+    background: linear-gradient(135deg, #eef4f8, #f8fbfd);
+    font-family: Georgia, "Times New Roman", serif;
+    color: #1f2933;
+    min-height: 100vh;
 }
 
-h1 {
-    font-weight: bold;
+/* NAVBAR / HEADER */
+.navbar,
+header {
+    background: linear-gradient(90deg, #0f172a, #111827);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
+.navbar-brand,
+header a,
+header h1 {
+    color: #ffffff !important;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+/* LAYOUT SPACING */
+.container {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+h1, h2, h3 {
+    color: #102a43;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+/* CARD DESIGN */
 .card {
-    border-radius: 12px;
-    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: none;
+    border-radius: 20px;
+    padding: 1.2rem;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(241, 245, 249, 0.88));
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+    transition: all 0.25s ease;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(6px);
 }
 
-.card-title {
-    color: #0d6efd;
+/* Modern accent */
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 5px;
+    width: 100%;
+    background: linear-gradient(to right, #2563eb, #14b8a6, #22c55e);
 }
 
+/* Hover effect */
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 22px rgba(0,0,0,0.2);
+    transform: translateY(-6px);
+    box-shadow: 0 16px 32px rgba(15, 23, 42, 0.12);
+}
+
+/* Alternating card tones */
+.row.g-4 > div:nth-child(3n+1) .card {
+    background: linear-gradient(135deg, rgba(239, 246, 255, 0.95), rgba(219, 234, 254, 0.85));
+}
+
+.row.g-4 > div:nth-child(3n+2) .card {
+    background: linear-gradient(135deg, rgba(236, 253, 245, 0.95), rgba(209, 250, 229, 0.85));
+}
+
+.row.g-4 > div:nth-child(3n+3) .card {
+    background: linear-gradient(135deg, rgba(254, 249, 195, 0.95), rgba(253, 230, 138, 0.82));
+}
+
+/* Card titles */
+.card-title {
+    color: #1d4ed8;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.3px;
+}
+
+/* Card text */
+.card p {
+    margin-bottom: 0.55rem;
+    line-height: 1.6;
+    font-style: italic;
+    color: #334155;
+}
+
+/* CARD LAYOUT */
+.row.g-4 {
+    justify-content: flex-start;
+}
+
+.row.g-4 > div {
+    margin-bottom: 1rem;
+}
+
+/* BUTTON STYLING */
+.btn {
+    border-radius: 10px;
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.btn-success,
+.btn-primary {
+    background: linear-gradient(90deg, #15803d, #16a34a);
+    border: none;
+    color: #ffffff;
+}
+
+.btn-success:hover,
+.btn-primary:hover {
+    background: linear-gradient(90deg, #166534, #15803d);
+    transform: translateY(-1px);
+}
+
+.btn-danger {
+    background: linear-gradient(90deg, #dc2626, #ef4444);
+    border: none;
+}
+
+.btn-danger:hover {
+    background: linear-gradient(90deg, #b91c1c, #dc2626);
+    transform: translateY(-1px);
+}
+
+.btn-warning,
+.btn-info {
+    background: linear-gradient(90deg, #2563eb, #3b82f6);
+    border: none;
+    color: #ffffff;
+}
+
+.btn-warning:hover,
+.btn-info:hover {
+    background: linear-gradient(90deg, #1d4ed8, #2563eb);
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+/* FORM STYLING */
+form {
+    background: rgba(255, 255, 255, 0.88);
+    padding: 1.8rem;
+    border-radius: 18px;
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+    border: 1px solid #d9e2ec;
+    backdrop-filter: blur(6px);
+}
+
+form input,
+form select,
+form textarea {
+    width: 100%;
+    margin-bottom: 1rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    padding: 0.7rem 0.85rem;
+    background-color: #ffffff;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+/* ALERTS */
+.alert-success {
+    background-color: #dcfce7;
+    border: 1px solid #86efac;
+    color: #166534;
+    border-radius: 12px;
+}
+
+.alert-danger,
+.alert-warning {
+    border-radius: 12px;
 }
