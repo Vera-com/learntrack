@@ -26,6 +26,7 @@ header h1 {
 .container {
     margin-top: 2rem;
     margin-bottom: 2rem;
+    max-width: 1100px;
 }
 
 h1, h2, h3 {
@@ -101,6 +102,7 @@ h1, h2, h3 {
 
 .row.g-4 > div {
     margin-bottom: 1rem;
+    max-width: 350px;
 }
 
 /* BUTTON STYLING */
