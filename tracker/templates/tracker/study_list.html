@@ -13,10 +13,10 @@
 </a>
 
 {% if sessions %}
-<div class="row">
+<div class="row g-4">
     {% for session in sessions %}
-    <div class="col-12 col-md-6 col-lg-4 mb-4">
-        <div class="card h-100 shadow-sm">
+    <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100">
             <div class="card-body">
                 <h5 class="card-title">{{ session.title }}</h5>
                 <h6 class="card-subtitle mb-2 text-muted">{{ session.course }}</h6>
