@@ -13,30 +13,28 @@ html {
 }
 
 body {
-    background: -o-linear-gradient(315deg, #eef4f8, #f8fbfd);
     background: linear-gradient(135deg, #eef4f8, #f8fbfd);
     font-family: Georgia, "Times New Roman", serif;
     color: #1f2933;
     min-height: 100vh;
     scroll-behavior: smooth;
     margin: 0;
-    padding-top: 80px;
+    padding-top: 90px;
 }
 
 /* NAVBAR / HEADER */
 .navbar,
 header {
-    background: -webkit-gradient(linear, left top, right top, from(#0f172a), to(#111827));
-    background: -o-linear-gradient(left, #0f172a, #111827);
     background: linear-gradient(90deg, #0f172a, #111827);
-    -webkit-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
     z-index: 1000;
-    padding-top: 0.4rem;
-    padding-bottom: 0.4rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    min-height: 60px;
 }
 
 .navbar-brand,
@@ -50,21 +48,22 @@ header h1 {
 }
 
 .navbar-brand {
-        text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
 .navbar-nav .nav-link {
     color: #ffffff !important;
     font-weight: 600;
     margin-left: 0.5rem;
-    padding: 0.5rem 0;
+    padding: 0.35rem 0;
 }
 
 .navbar-nav .nav-link:hover {
     color: #93c5fd !important;
 }
 
-.navbar-togggler {
+/* fix typo: navbar-toggler, not navbar-togggler */
+.navbar-toggler {
     padding: 0.25rem 0.5rem;
 }
 
@@ -79,7 +78,11 @@ header h1 {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 1.5rem 1rem;
+    padding: 1.2rem 1rem;
+}
+
+main.container {
+    margin-top: 10px;
 }
 
 h1, h2, h3 {
@@ -306,21 +309,14 @@ form textarea:focus {
    }
 
    .navbar {
-      padding-top: 0.4rem;
-      padding-bottom: 0.4rem;
+      padding-top: 0.35rem;
+      padding-bottom: 0.35rem;
    }
 }
-.example {
-    display: -ms-grid;
-    display: grid;
-    -webkit-transition: all .5s;
-    -o-transition: all .5s;
-    transition: all .5s;
-    -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
-    background: -webkit-gradient(linear, left top, left bottom, from(white), to(black));
-    background: -o-linear-gradient(top, white, black);
-    background: linear-gradient(to bottom, white, black);
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1280px;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
 }
