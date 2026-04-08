@@ -1,10 +1,16 @@
 /* GLOBAL STYLING */
 /* Elegant soft background and cleaner overall feel */
+
+html {
+    background-color: #eef4f8;
+}
+
 body {
     background: linear-gradient(135deg, #eef4f8, #f8fbfd);
     font-family: Georgia, "Times New Roman", serif;
     color: #1f2933;
     min-height: 100vh;
+    scroll-behavior: smooth;
 }
 
 /* NAVBAR / HEADER */
@@ -27,12 +33,24 @@ header h1 {
     margin-top: 2rem;
     margin-bottom: 2rem;
     max-width: 1100px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 1rem;
+    padding-left: 1rem;
 }
 
 h1, h2, h3 {
     color: #102a43;
     font-weight: 700;
     margin-bottom: 1rem;
+}
+
+h1 {
+    display: flex;
+    align-items: center;
+}
+h1 i {
+    color: #2563eb;
 }
 
 /* CARD DESIGN */
@@ -59,6 +77,19 @@ h1, h2, h3 {
     width: 100%;
     background: linear-gradient(to right, #2563eb, #14b8a6, #22c55e);
 }
+
+.card:nth-child(3n+1) {
+    background: linear-gradient(135deg, #fdf2f8, #fce7f3); /* soft pink */
+}
+
+.card:nth-child(3n+2) {
+    background: linear-gradient(135deg, #eff6ff, #dbeafe); /* soft blue */
+}
+
+.card:nth-child(3n+3) {
+    background: linear-gradient(135deg, #ecfdf5, #d1fae5); /* soft green */
+}
+
 
 /* Hover effect */
 .card:hover {
