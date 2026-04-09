@@ -391,6 +391,14 @@ For full details, see `test.md`.
 
 The deployed application was tested to ensure that all CRUD functionality works correctly in the production environment, and project was deployed using Render.
 
+### Note on Deployment
+
+This application is deployed using Render's free tier.  
+As a result, the service may enter a sleep state after periods of inactivity.  
+
+If the app does not load immediately, please allow up to 60 seconds for it to wake up.
+
+
 ### Steps
 
 1. Code pushed to GitHub  
@@ -412,6 +420,8 @@ pip install -r requirements.txt && python manage.py migrate && python manage.py 
 - Bootstrap documentation
 - Code Institute course materials
 - Code Institute MS3 Webinar
+- MDN web Docs - Referenced for HTML form validation, input attributes and general web development best practices
+- Django Documentation - Used for understanding models, views, and CRUD functionality.
 
 
 
