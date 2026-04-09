@@ -294,6 +294,31 @@ Testing was carried out across local and deployed environments.
 - Deployment  
 - Lighthouse testing  
 
+### HTML Validation
+
+![HTML Validation](static/tracker/images/html-validation.png)
+
+*Figure: HTML validated using W3C Nu HTML Checker with no errors*
+
+---
+
+### CSS Validation
+
+![CSS Validation](static/tracker/images/css-validation.png)
+
+*Figure: CSS validated using W3C CSS Validator with no errors*
+
+---
+
+### PEP8 Validation
+
+Flake8 was used to validate all Python files to ensure adherence to PEP8 standards.  
+No errors or warnings were found after refactoring long lines in the settings file.
+
+![PEP8 Validation](static/tracker/images/pep8-validation.png)
+
+*Figure: Flake8 validation showing no errors or warnings*
+
 ### Lighthouse Testing
 
 - Desktop performance scores were high  
@@ -301,7 +326,7 @@ Testing was carried out across local and deployed environments.
 
 Despite this:
 
-- The application remains fully functional  
+- The application is fully functional  
 - User experience is smooth  
 - Accessibility and best practices scores are high  
 
