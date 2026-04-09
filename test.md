@@ -149,30 +149,38 @@ Despite this:
 
 ## Validator Testing
 
-### HTML Validation
+## HTML Validation
+All HTML pages were validated using W3C Markup validator. No errors major error was found.
 
-- HTML validated using W3C Validator  
-- Validation performed using deployed URLs due to Django templates  
+![Homepage](tracker/static/tracker/images/html-validation.png)
 
-**Result:** ✅ Pass  
+![Add]()
 
----
+![Edit](tracker/static/tracker/images/html-edit-validation.png)
 
-### CSS Validation
+![Delete](tracker/static/tracker/images/html-validation-delete.png)
 
-- CSS validated using W3C CSS Validator  
+## CSS Validation
+CSS was validated using the W3C CSS validator.
 
-**Result:** ✅ Pass  
+![CSS](tracker/static/tracker/images/css-validation.png)
 
----
+## PEP8 Validation
+Python code was tested using Flake8 to ensure PEP8 compliance.
+![PEP8](tracker/static/tracker/images/pep8-validation.png)
 
-### Python (PEP8) Validation
+## Lighthouse Testing
 
-- Python code checked using Flake8  
-- Migrations and virtual environment files excluded using `.flake8` configuration  
-- Minor line-length issues addressed where necessary  
+![Homepage](tracker/static/tracker/images/lighthouse-validation-hompage.png)
+![Add](tracker/static/tracker/images/lighthouse-validation-add.png)
+![Edit](tracker/static/tracker/images/lighthouse-edit-validation.png)
+![Delete](tracker/static/tracker/images/lighthouse-validation-delete.png)
 
-**Result:** ✅ Pass  
+## Responsiveness
+
+![iPhone](tracker/static/tracker/images/iphone-view.png)
+![iPad](tracker/static/tracker/images/ipad-view.png)
+![Laptop](tracker/static/tracker/images/laptop-view.png)
 
 ---
 

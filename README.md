@@ -25,9 +25,21 @@
 
 LearnTrack is a Django-based web application designed to help users track and manage their study sessions in an organised and structured way.
 
-As someone learning new skills, I realised it is easy to forget what has been studied and how much time has been spent. This project addresses that by allowing users to record study sessions with key details such as course, title, duration, date, and description.
+This application was developed to address the challenge of tracking learning progress effectively, ensuring users can organise and monitor their their study sessions in one place.
 
 The aim is to keep everything in one place and provide a clear overview of learning progress.
+
+## Live Project
+
+The deployed application can be accessed here:  
+👉 https://learntrack-0owm.onrender.com/
+
+
+## Repository
+
+The GitHub repository can be accessed here:  
+👉 https://github.com/Vera-com/learntrack
+
 
 ---
 
@@ -106,6 +118,7 @@ This application is suitable for:
 
 ## Features
 
+- Clean and intuitive user interface focused on usability
 - Full CRUD functionality (Create, Read, Update, Delete)
 - Study sessions displayed using Bootstrap cards
 - Fields include title, course, duration, date, and description
@@ -160,6 +173,34 @@ Each study session is linked to a course, allowing:
 
 ---
 
+## Django Implementation
+
+Django was used as the core backend framework to build the application and manage data flow between the database and user interface.
+
+- **Models:**  
+  Django models were used to define the database structure for `Course` and `StudySession`, establishing relationships using foreign keys.
+
+- **Views:**  
+  Views were implemented to handle user requests, process form data, and control application logic such as creating, updating, and deleting study sessions.
+
+- **Templates:**  
+  Django templates were used to render dynamic content on the frontend, allowing study session data to be displayed using loops and template tags.
+
+- **Forms:**  
+  Django forms were used to handle user input, validate data, and simplify form processing.
+
+- **URLs:**  
+  URL patterns were configured to connect user actions to the appropriate views, enabling navigation throughout the application.
+
+- **Messages Framework:**  
+  Django’s built-in messaging system was used to display success messages after actions such as adding, editing, or deleting sessions.
+
+- **Database:**  
+  SQLite was used during development, while PostgreSQL was used in production to ensure data persistence on Render.
+
+This structure follows Django’s Model-View-Template (MVT) architecture, ensuring a clean separation of concerns and maintainable code.
+
+
 ## Design
 
 The design focuses on clarity, usability, and a clean learning-focused layout.
@@ -193,7 +234,7 @@ These choices were made to balance simplicity, clarity, and a better user experi
 
 Wireframes were created during the planning stage to define the page layout, user flow, and placement of CRUD actions before development began.
 
-![LearnTrack Wireframe](static/tracker/images/wireframe.png)
+![LearnTrack Wireframe](/tracker/static/tracker/images/wireframe.png)
 
 *Figure: Wireframe showing the main study session list, navigation, action buttons, and responsive mobile layout.*
 
@@ -308,7 +349,7 @@ Testing was carried out across local and deployed environments.
 
 ### HTML Validation
 
-![HTML Validation](static/tracker/images/html-validation.png)
+![HTML Validation](tracker/static/tracker/images/html-validation.png)
 
 *Figure: HTML validated using W3C Nu HTML Checker with no errors*
 
@@ -316,7 +357,7 @@ Testing was carried out across local and deployed environments.
 
 ### CSS Validation
 
-![CSS Validation](static/tracker/images/css-validation.png)
+![CSS Validation](tracker/static/tracker/images/css-validation.png)
 
 *Figure: CSS validated using W3C CSS Validator with no errors*
 
@@ -327,7 +368,7 @@ Testing was carried out across local and deployed environments.
 Flake8 was used to validate all Python files to ensure adherence to PEP8 standards.  
 No errors or warnings were found after refactoring long lines in the settings file.
 
-![PEP8 Validation](static/tracker/images/pep8-validation.png)
+![PEP8 Validation](tracker/static/tracker/images/pep8-validation.png)
 
 *Figure: Flake8 validation showing no errors or warnings*
 
@@ -348,7 +389,7 @@ For full details, see `test.md`.
 
 ## Deployment
 
-The project was deployed using Render.
+The deployed application was tested to ensure that all CRUD functionality works correctly in the production environment, and project was deployed using Render.
 
 ### Steps
 
