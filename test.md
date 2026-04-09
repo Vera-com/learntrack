@@ -74,7 +74,7 @@ The application was tested manually in both local and deployed (Render) environm
 ## Database Testing
   
 - SQLite database used during development
-- PostgreSQL used in production (Rennder)
+- PostgreSQL used in production (Render)
 - Data persists correctly after deployment
 - Relationships between Course and StudySession work correctly  
 - Each study session is linked to a course  
@@ -99,6 +99,7 @@ Bootstrap grid system ensures layout adapts correctly across all devices.
 
 ## Deployment Testing
 
+The deployed version was tested with DEBUG-False to stimulate a production environment.
 - Application deployed successfully on Render  
 - All CRUD operations function correctly on the live site  
 - PostgreSQL database persists data correctly  
@@ -149,34 +150,34 @@ Despite this:
 
 ## Validator Testing
 
-## HTML Validation
-All HTML pages were validated using W3C Markup validator. No errors major error was found.
+### HTML Validation
+All HTML pages were validated using W3C Markup validator. No major errors was found.
 
 ![Homepage](tracker/static/tracker/images/html-validation.png)
-
-![Add]()
 
 ![Edit](tracker/static/tracker/images/html-edit-validation.png)
 
 ![Delete](tracker/static/tracker/images/html-validation-delete.png)
 
-## CSS Validation
+### CSS Validation
 CSS was validated using the W3C CSS validator.
 
 ![CSS](tracker/static/tracker/images/css-validation.png)
 
-## PEP8 Validation
+### PEP8 Validation
 Python code was tested using Flake8 to ensure PEP8 compliance.
+Initial testing identified line length issues (E501), which were resolved by refactoring the code.
+After corrections, flake8 returned no errors or warnings.
 ![PEP8](tracker/static/tracker/images/pep8-validation.png)
 
-## Lighthouse Testing
+### Lighthouse Testing
 
 ![Homepage](tracker/static/tracker/images/lighthouse-validation-hompage.png)
 ![Add](tracker/static/tracker/images/lighthouse-validation-add.png)
 ![Edit](tracker/static/tracker/images/lighthouse-edit-validation.png)
 ![Delete](tracker/static/tracker/images/lighthouse-validation-delete.png)
 
-## Responsiveness
+### Responsiveness
 
 ![iPhone](tracker/static/tracker/images/iphone-view.png)
 ![iPad](tracker/static/tracker/images/ipad-view.png)

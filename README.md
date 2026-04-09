@@ -25,7 +25,7 @@
 
 LearnTrack is a Django-based web application designed to help users track and manage their study sessions in an organised and structured way.
 
-This application was developed to address the challenge of tracking learning progress effectively, ensuring users can organise and monitor their their study sessions in one place.
+This application was developed to address the challenge of tracking learning progress effectively, ensuring users can organise and monitor their study sessions in one place.
 
 The aim is to keep everything in one place and provide a clear overview of learning progress.
 
