@@ -2,9 +2,9 @@
 
 ## Overview
 
-Testing was carried out throughout the development of this project to ensure that all functionality works as expected.  
+Testing was carried out throughout the development of this project to ensure that all functionality works as expected.
 
-The application was tested manually on both local and deployed environments.
+The application was tested manually in both local and deployed (Render) environments.
 
 ---
 
@@ -12,7 +12,7 @@ The application was tested manually on both local and deployed environments.
 
 ### 1. Create (Add Study Session)
 
-- User can fill out the form and submit a new study session  
+- Users can fill out the form and submit a new study session  
 - Required fields prevent empty submissions  
 - Date picker allows easy date selection  
 - After submission, the session appears on the homepage  
@@ -24,7 +24,7 @@ The application was tested manually on both local and deployed environments.
 ### 2. Read (View Study Sessions)
 
 - All study sessions are displayed on the homepage  
-- Sessions are shown in a clear card layout  
+- Sessions are shown in a structured card layout  
 - Each card displays:
   - Title  
   - Course  
@@ -38,11 +38,11 @@ The application was tested manually on both local and deployed environments.
 
 ### 3. Update (Edit Study Session)
 
-- User can click the "Edit" button  
+- Users can click the "Edit" button  
 - Existing data is pre-filled in the form  
 - Changes are saved correctly  
-- User is redirected back to the homepage  
-- Success message is displayed  
+- Users are redirected back to the homepage  
+- A success message is displayed  
 
 **Result:** ✅ Pass  
 
@@ -50,12 +50,12 @@ The application was tested manually on both local and deployed environments.
 
 ### 4. Delete (Remove Study Session)
 
-- User clicks "Delete" button  
+- Users click the "Delete" button  
 - JavaScript confirmation prompt appears  
 - Django confirmation page is displayed  
-- User can confirm or cancel deletion  
-- After deletion, session is removed  
-- Success message is displayed  
+- Users can confirm or cancel deletion  
+- After deletion, the session is removed  
+- A success message is displayed  
 
 **Result:** ✅ Pass  
 
@@ -63,17 +63,19 @@ The application was tested manually on both local and deployed environments.
 
 ## Form Validation Testing
 
-- Empty fields trigger validation errors  
-- Required fields must be completed before submission  
-- Error messages are displayed clearly  
+- Required fields prevent empty submissions  
+- Validation errors are displayed when fields are missing  
+- Users cannot submit invalid data  
 
 **Result:** ✅ Pass  
 
 ---
 
 ## Database Testing
-
-- Data is successfully stored in PostgreSQL database  
+  
+- SQLite database used during development
+- PostgreSQL used in production (Rennder)
+- Data persists correctly after deployment
 - Relationships between Course and StudySession work correctly  
 - Each study session is linked to a course  
 
@@ -83,7 +85,7 @@ The application was tested manually on both local and deployed environments.
 
 ## Responsiveness Testing
 
-The application was tested on different screen sizes:
+The application was tested across multiple screen sizes:
 
 - Mobile devices  
 - Tablets  
@@ -98,9 +100,77 @@ Bootstrap grid system ensures layout adapts correctly across all devices.
 ## Deployment Testing
 
 - Application deployed successfully on Render  
-- All CRUD operations work on the live site  
-- Database (PostgreSQL) persists data correctly  
+- All CRUD operations function correctly on the live site  
+- PostgreSQL database persists data correctly  
 - Admin panel is accessible and functional  
+
+**Result:** ✅ Pass  
+
+---
+
+## Lighthouse Testing
+
+Lighthouse testing was conducted using Chrome DevTools on the deployed application.
+
+### Results Observed:
+
+- **Desktop Scores:**
+  - Performance: High (90+)
+  - Accessibility: 97–100  
+  - Best Practices: 96–100  
+  - SEO: 90  
+
+- **Mobile Scores:**
+  - Performance: Lower (approx. 65–75)  
+  - Accessibility: 100  
+  - Best Practices: 100  
+  - SEO: 90  
+
+### Explanation:
+
+Lower mobile performance scores were primarily due to **third-party CDN resources**, including:
+
+- Bootstrap CSS  
+- Bootstrap JavaScript  
+- Bootstrap Icons  
+
+These introduce minor render-blocking behaviour during page load, which affects performance scores during Lighthouse testing.
+
+Despite this:
+
+- The application is fully functional  
+- Pages load correctly  
+- User experience is smooth  
+- Accessibility and best practices scores are high  
+
+**Result:** ✅ Pass  
+
+---
+
+## Validator Testing
+
+### HTML Validation
+
+- HTML validated using W3C Validator  
+- Validation performed using deployed URLs due to Django templates  
+
+**Result:** ✅ Pass  
+
+---
+
+### CSS Validation
+
+- CSS validated using W3C CSS Validator  
+
+**Result:** ✅ Pass  
+
+---
+
+### Python (PEP8) Validation
+
+- Python code checked using Flake8  
+- Migrations and virtual environment files excluded using `.flake8` configuration  
+- Minor line-length issues addressed where necessary  
 
 **Result:** ✅ Pass  
 
@@ -109,6 +179,7 @@ Bootstrap grid system ensures layout adapts correctly across all devices.
 ## Bugs and Fixes
 
 ### 1. Course Dropdown Not Showing Options
+
 **Issue:**  
 Course dropdown was empty when adding a study session  
 
@@ -121,30 +192,33 @@ Added course entries via Django admin
 ---
 
 ### 2. Admin Login Not Working
+
 **Issue:**  
 Unable to log into Django admin after deployment  
 
 **Cause:**  
-Database reset after switching from SQLite to PostgreSQL  
+Database reset  
 
 **Fix:**  
-Implemented signal to automatically create superuser during deployment  
+Reconfigured admin credentials  
 
 ---
 
 ### 3. Data Loss After Deployment
+
 **Issue:**  
-Study sessions disappeared after redeploy  
+Study sessions and data disappeared after redeploy  
 
 **Cause:**  
-SQLite database was not persistent on Render  
+SQLite database is not persistent on Render  
 
 **Fix:**  
-Switched to PostgreSQL database for persistent storage  
+Switched to PostgreSQL for persistent storage  
 
 ---
 
 ### 4. Static Files Not Loading
+
 **Issue:**  
 CSS was not applied correctly  
 
@@ -154,28 +228,25 @@ Configured static files properly using Django static settings
 ---
 
 ### 5. Favicon Appearing Blurry
+
 **Issue:**  
-Favicon was unclear in browser tab  
+Favicon appeared unclear  
 
 **Fix:**  
-Replaced with a properly scaled and optimised icon  
-
----
-
-## Validator Testing
-
-- HTML validated using W3C Validator (via deployed URL)  
-- CSS validated using W3C CSS Validator  
-- Python code follows PEP8 guidelines  
+Replaced with properly sized and optimised icon  
 
 ---
 
 ## Conclusion
 
-All core features of the application are functioning as expected.  
+All core features of the application are functioning as expected.
 
-The project successfully meets the requirements for:
+The project covers the main requirements for assessment, including:
+
 - CRUD functionality  
 - Database integration  
 - Deployment  
-- User experience and validation  
+- Responsive design  
+- Validation and testing  
+
+The application is stable, and user-friendly.
