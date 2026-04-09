@@ -5,11 +5,14 @@
 - [Overview](#overview)
 - [Project Goals](#project-goals)
 - [User Experience](#user-experience)
+- [Target Users](#target-users)
 - [User Stories](#user-stories)
+- [MoSCoW Prioritisation](#moscow-prioritisation)
 - [Features](#features)
 - [Data Model](#data-model)
 - [Technologies Used](#technologies-used)
 - [Design](#design)
+- [Colour Palette and Design Choices](#colour-palette-and-design-choices)
 - [Challenges and Solutions](#challenges-and-solutions)
 - [Testing](#testing)
 - [Deployment](#deployment)
@@ -19,11 +22,11 @@
 
 ## Overview
 
-LearnTrack is a simple web app I built using Django to help track study sessions in an organised way.
+LearnTrack is a Django-based web application designed to help users track and manage their study sessions in an organised and structured way.
 
-As someone learning new skills, I realised it’s easy to forget what you’ve studied and how much time you’ve spent. This project solves that by allowing users to record their study sessions with details like course, title, duration, date, and a short description.
+As someone learning new skills, I realised it is easy to forget what has been studied and how much time has been spent. This project addresses that by allowing users to record study sessions with key details such as course, title, duration, date, and description.
 
-The goal is to keep everything in one place and make learning progress more visible and structured.
+The aim is to keep everything in one place and provide a clear overview of learning progress.
 
 ---
 
@@ -33,183 +36,189 @@ The main goal of this project is to create a simple and user-friendly study trac
 
 - Add new study sessions
 - View all recorded sessions
-- Stay consistent with their learning
-- Build a habit of tracking progress
+- Edit existing sessions
+- Delete sessions when no longer needed
+- Maintain consistency in learning
+- Track personal progress over time
 
 ---
 
 ## User Experience
 
-The application was designed to be simple and easy to use. Users can quickly add and manage their study sessions without confusion.
+The application was designed with simplicity and clarity in mind.
 
-Study sessions are displayed in a card layout to improve readability and organisation.
-
-A confirmation message is shown before deleting a session to prevent accidental data loss.
-
-The layout is responsive, allowing users to access the application comfortably on mobile devices, tablets, and desktops.
+- Study sessions are displayed in a card layout for better readability
+- Navigation is straightforward and intuitive
+- Confirmation prompts prevent accidental deletion
+- Success messages provide feedback after actions
+- The application is fully responsive across mobile, tablet, and desktop devices
 
 ---
 
 ## Target Users
 
-This app is designed for:
+This application is suitable for:
+
 - Students
 - Self-learners
-- Anyone taking online courses
-- People trying to stay consistent with learning
+- Online course participants
+- Anyone trying to stay consistent with learning
 
 ---
 
 ## User Stories
 
-- As a user, I want to add a study session so I can track what I’ve learned.
-- As a user, I want to see all my study sessions so I can review my progress.
-- As a user, I want to edit a session in case I made a mistake.
-- As a user, I want to delete a session I no longer need.
+- As a user, I want to add a study session so I can track what I’ve learned
+- As a user, I want to view all my sessions to review my progress
+- As a user, I want to edit sessions to correct mistakes
+- As a user, I want to delete sessions I no longer need
 
 ---
 
 ## MoSCoW Prioritisation
 
-To help organise the development process and focus on what is most important, the features of this project is prioritised using the MoSCoW method.
-
----
-
 ### Must Haves
 
-These are the core features required for the application to function properly:
-
-- Add new study sessions  
-- View all study sessions  
-- Edit existing study sessions  
-- Delete study sessions  
-- Store data in the database  
-- Responsive layout across mobile, tablet, and desktop  
-
----
+- Add new study sessions
+- View all sessions
+- Edit sessions
+- Delete sessions
+- Store data in a database
+- Responsive design
 
 ### Should Haves
 
-These features help improve the user experience:
-
-- Confirmation prompt before deleting a session  
-- Success messages after adding, editing, or deleting  
-- Clean and structured layout using Bootstrap cards  
-- Date picker for easier date selection  
-
----
+- Delete confirmation prompt
+- Success messages
+- Clean UI with Bootstrap cards
+- Date picker
 
 ### Could Haves
 
-These are additional features that could be added in the future:
+- Dark mode
+- Search or filter
+- Dashboard analytics
+- User authentication
+- Export data
 
-- Dark mode or colour theme options  
-- Search or filter study sessions  
-- Dashboard showing total study time or progress  
-- User authentication system  
-- Export study sessions (PDF or CSV)
-
+---
 
 ## Features
 
-At the current stage, the application includes:
-
-- Users can create, view, edit, and delete study sessions
-- Study sessions are displayed in a responsive card layout using Bootstrap
-- Each session includes title, course, duration, date, and description
-- A dropdown is used for selecting course categories
-- A date picker is included to simplify date selection
-- A confirmation prompt appears before deleting a session to prevent accidental loss of data
-- The layout is responsive across mobile, tablet, and desktop devices
-- Custom styling has been applied for improved presentation
-- A custom favicon has been added for better branding
-- Success messages are displayed after creating, updating, or deleting a session
-- Delete functionality includes both a JavaScript confirmation prompt and a Django confirmation page for added safety
+- Full CRUD functionality (Create, Read, Update, Delete)
+- Study sessions displayed using Bootstrap cards
+- Fields include title, course, duration, date, and description
+- Dropdown for course selection
+- Date picker for improved usability
+- Delete confirmation using JavaScript and Django confirmation flow
+- Responsive layout across all devices
+- Custom styling applied for improved presentation
+- Favicon added for branding
+- Success messages displayed after actions
 
 ---
 
 ## Data Model
 
-The application uses two main models:
-
 ### Course
-This model stores the different course categories available in the app.
 
 - Name (CharField)
 
----
-
 ### StudySession
-This model stores individual study sessions.
 
 - Course (ForeignKey → Course)
 - Title
 - Description
-- Duration (in minutes)
+- Duration
 - Date
-
----
 
 ### Relationship
 
-Each study session is linked to a course using a ForeignKey relationship.
+Each study session is linked to a course, allowing:
 
-This allows:
-- Multiple study sessions per course
-- Easy categorisation and filtering
+- Multiple sessions per course
+- Easy categorisation and organisation
 
+---
 
 ## Technologies Used
 
 - HTML
 - CSS
-- Bootstrap
+- Bootstrap 5
 - Python
 - Django
-- SQLite
+- PostgreSQL (production)
+- SQLite (development)
 - Git & GitHub
+- Render
+- Chrome DevTools
+- Lighthouse
+- Flake8
+- Autoprefixer
 
 ---
 
 ## Design
 
-The design was kept simple and clean to ensure ease of use. Study sessions are displayed as cards so each entry is clearly separated and easy to read. Bootstrap was used to create a responsive and consistent layout across different screen sizes.
+The design focuses on clarity, usability, and a clean learning-focused layout.
 
-—
+- Card layout used for structured display of sessions
+- Bootstrap used for responsive grid and navigation
+- Consistent spacing and alignment applied across pages
+- Forms styled for readability and simplicity
+- Navigation kept minimal to avoid clutter
+
+---
+
+## Colour Palette and Design Choices
+
+The colour scheme for LearnTrack was selected to create a clean, modern, and approachable interface while maintaining readability and good contrast.
+
+- **Background:** A soft pale blue / off-white background was used to keep the interface light and calm, reducing visual fatigue.
+- **Navbar:** A dark navy gradient was used in the navigation bar to create contrast, give the application structure, and make the branding stand out clearly.
+- **Headings:** A deep blue tone was used for headings to create a professional and consistent visual hierarchy.
+- **Buttons:**  
+  - Green was used for positive actions such as Add and Save  
+  - Red was used for Delete to clearly indicate destructive actions  
+  - Blue was used for secondary emphasis and highlights
+- **Cards:** Soft pink, blue, and green card backgrounds were used to create variety and visual interest without making the interface distracting or overwhelming.
+
+These choices were made to balance simplicity, clarity, and a polished user experience.
+
+---
 
 ## Challenges and Solutions
 
-During the development of this project, I encountered a few challenges which helped me understand Django and web development better.
-
 ### 1. Form Submission and Data Saving
-At first, I had issues getting the form to save data correctly to the database. The page would reload, but no new data appeared.
 
-**Solution:**  
-I ensured that the form was properly connected to the view using `request.POST`, and added form validation using `form.is_valid()` before saving.
+**Issue:** Form data was not saving correctly.
+
+**Solution:** The form was connected properly using `request.POST`, and validation was handled using `form.is_valid()` before saving.
 
 ---
 
 ### 2. Redirect After Form Submission
-After submitting the form, the page was not redirecting back to the main list view.
 
-**Solution:**  
-I used Django’s `redirect()` function to send users back to the study list page after successfully saving a session.
+**Issue:** The page did not redirect after a successful form submission.
+
+**Solution:** Django’s `redirect()` function was used to return users to the study session list page.
 
 ---
 
 ### 3. Template Structure Confusion
-Understanding how `base.html` and other templates connect using `{% extends %}` was initially confusing.
 
-**Solution:**  
-I structured all templates inside `templates/tracker/` and used template inheritance correctly so that all pages share a consistent layout.
+**Issue:** Understanding how `base.html` and template inheritance worked was initially confusing.
+
+**Solution:** Templates were structured properly inside `templates/tracker/` and connected using `{% extends %}` so all pages could share a consistent layout.
 
 ---
 
 ### 4. Static Files Not Loading Properly
-At one point, my CSS was not applying to the page.
 
-**Solution:**  
-I fixed this by correctly setting up the static folder (`static/tracker/`) and using `{% load static %}` along with the proper static path in the template.
+**Issue:** CSS was not applying correctly at one stage.
+
+**Solution:** Static files were configured correctly, and `{% load static %}` was used with the proper static paths.
 
 ---
 
@@ -228,123 +237,95 @@ This allowed users to select dates easily from a calendar instead of typing manu
 ---
 
 ### 6. Understanding Django Project Structure
-At the beginning, it was difficult to understand how models, views, templates, and URLs all connect together.
 
-**Solution:**
-By building the project step by step, I was able to understand how each part interacts, especially how data flows from the database to the frontend.
+**Issue:** It was initially difficult to understand how models, views, URLs, and templates connect together.
+
+**Solution:** Building the project step by step helped clarify how data flows from the database to the frontend.
 
 ---
 
 ### 7. Delete Functionality and User Experience
 
-Initially, the delete functionality redirected users to a separate confirmation page, which worked but felt slightly slow.
+**Issue:** The delete process initially felt slow.
 
 **Solution:**
-This was improved by adding a JavaScript confirmation prompt before the delete action is triggered.  
-
-In addition to this, a Django confirmation page was kept as a secondary safeguard, ensuring that users do not accidentally delete important data.
-
-A success message is also displayed after deletion, providing clear feedback to the user.
-
-This combination improves both speed and safety in the user experience.
-
+- Added JavaScript confirmation prompt  
+- Retained Django confirmation page as backup  
+- Added success messages for user feedback  
 
 ---
 
 ### 8. Responsive Layout Issues
 
-The initial layout did not display well on smaller screens.
+**Issue:** Layout did not display properly on smaller screens.
 
-**Solution:**
-Bootstrap grid classes were used to ensure the layout adapts properly across mobile, tablet, and desktop devices.
+**Solution:** Bootstrap grid system was used to ensure responsiveness across all devices.
 
 ---
 
 ### 9. Favicon Clarity Issue
 
-The favicon initially appeared blurry due to incorrect sizing and resolution.
+**Issue:** Favicon appeared blurry.
 
-**Solution:**
-This was improved by replacing it with a clearer, properly scaled icon to ensure better visibility in the browser tab.
+**Solution:** Replaced with a properly scaled and optimised icon.
 
+---
 
+### 10. Data Persistence in Production
 
-## Project Status
+**Issue:** SQLite database does not persist on Render.
 
-This project is currently functional and includes full CRUD (Create, Read, Update, Delete) functionality.
-
-Users can add, view, edit, and delete study sessions. The application also includes responsive design and basic user experience improvements such as confirmation prompts for deletion.
-
-Further improvements may include enhanced validation, user authentication, and additional features.
+**Solution:** PostgreSQL was used in production to ensure data persistence.
 
 ---
 
 ## Testing
 
-The application was tested manually to ensure all core functionality works as expected.
+Testing was carried out across local and deployed environments.
 
-### CRUD Testing
+### Key Areas Tested
 
-- **Create:**  
-  Users can successfully add new study sessions using the form.
+- CRUD functionality  
+- Form validation  
+- Responsiveness  
+- HTML validation  
+- CSS validation  
+- Python (PEP8) validation  
+- Deployment  
+- Lighthouse testing  
 
-- **Read:**  
-  All study sessions are displayed correctly on the homepage in a card layout.
+### Lighthouse Testing
 
-- **Update:**  
-  Users can edit existing study sessions, and changes are reflected immediately.
+- Desktop performance scores were high  
+- Mobile performance scores were lower due to third-party CDN resources (Bootstrap and Bootstrap Icons)  
 
-- **Delete:**  
-  Users can delete sessions using a confirmation prompt and confirmation page.  
-  A success message is displayed after deletion.
+Despite this:
 
----
+- The application remains fully functional  
+- User experience is smooth  
+- Accessibility and best practices scores are high  
 
-### Form Validation
-
-- Required fields prevent empty submissions
-- Error messages are displayed when fields are missing
-
----
-
-### Responsiveness
-
-- Tested on mobile, tablet, and desktop screen sizes
-- Layout adjusts correctly using Bootstrap grid
+For full details, see `test.md`.
 
 ---
-
-### Deployment Testing
-
-- Application runs successfully on the deployed Render URL
-- Database operations (CRUD) work correctly in production
-
-
----
-
 
 ## Deployment
 
-This project was deployed using Render.
+The project was deployed using Render.
 
-### Steps:
+### Steps
 
-1. The project was pushed to GitHub
-2. A new Web Service was created on Render
-3. The repository was connected to Render
-4. Environment variables were configured
-5. Build command used:
+1. Code pushed to GitHub  
+2. Web service created on Render  
+3. Repository connected  
+4. Environment variables configured  
+5. PostgreSQL used in production  
+6. Build command:
 
+```bash
 pip install -r requirements.txt && python manage.py migrate && python manage.py collectstatic --noinput
-
-6. The application was deployed successfully and is accessible via a public URL
-
----
-
-### Notes
-
-- The free Render instance may spin down after inactivity
-- Initial load may take a few seconds when waking up
+```
+7. Application deployed successfully
 
 
 ## Credits
@@ -352,6 +333,7 @@ pip install -r requirements.txt && python manage.py migrate && python manage.py 
 - Django documentation
 - Bootstrap documentation
 - Code Institute course materials
+- Code Institute MS3 Webinar
 
 
 
