@@ -13,6 +13,7 @@
 - [Technologies Used](#technologies-used)
 - [Design](#design)
 - [Colour Palette and Design Choices](#colour-palette-and-design-choices)
+- [Wireframes](#wireframes)
 - [Challenges and Solutions](#challenges-and-solutions)
 - [Testing](#testing)
 - [Deployment](#deployment)
@@ -184,9 +185,20 @@ The colour scheme for LearnTrack was selected to create a clean, modern, and app
   - Blue was used for secondary emphasis and highlights
 - **Cards:** Soft pink, blue, and green card backgrounds were used to create variety and visual interest without making the interface distracting or overwhelming.
 
-These choices were made to balance simplicity, clarity, and a polished user experience.
+These choices were made to balance simplicity, clarity, and a better user experience.
 
 ---
+
+## Wireframes
+
+Wireframes were created during the planning stage to define the page layout, user flow, and placement of CRUD actions before development began.
+
+![LearnTrack Wireframe](static/tracker/images/wireframe.png)
+
+*Figure: Wireframe showing the main study session list, navigation, action buttons, and responsive mobile layout.*
+
+The final implementation closely follows this structure, with small improvements made during development for responsiveness, spacing, and usability.
+
 
 ## Challenges and Solutions
 
